@@ -9,6 +9,10 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  export default defineConfig({
+  server: {
+    allowedHosts: [
+      '24e76ce6-7e9d-4c98-b5f1-b50d3e2eaab0-00-2zy1n9gwskwhw.riker.replit.dev'
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
