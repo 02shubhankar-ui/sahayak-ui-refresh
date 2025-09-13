@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Search, User, Menu, Globe } from 'lucide-react';
+import { Search, User, Menu, Globe, Sun, Moon } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 interface HeaderProps {
   onLanguageChange: (lang: string) => void;
@@ -11,6 +12,7 @@ interface HeaderProps {
 
 export const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
   const [searchQuery, setSearchQuery] = useState('');
+  const { theme, setTheme } = useTheme();
 
   return (
     <header className="bg-primary text-primary-foreground shadow-lg">
@@ -47,6 +49,18 @@ export const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
+            {/* Theme Toggle */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="text-white hover:bg-white/10"
+            >
+              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+
             {/* Language Selector */}
             <Select value={currentLanguage} onValueChange={onLanguageChange}>
               <SelectTrigger className="w-32 bg-white/10 border-white/20 text-white">
