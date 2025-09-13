@@ -23,7 +23,7 @@ export const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             </div>
             <div>
               <h1 className="text-xl font-bold">
-                {currentLanguage === 'hi' ? 'हरित सहायक पोर्टल' : 'Harit Sahayak Portal'}
+                {currentLanguage === 'hi' ? 'स्मार्ट कृषि' : 'Smart Krishi'}
               </h1>
               <p className="text-sm text-primary-foreground/80">
                 {currentLanguage === 'hi' ? 'स्मार्ट खेती का साथी' : 'Smart Farming Companion'}

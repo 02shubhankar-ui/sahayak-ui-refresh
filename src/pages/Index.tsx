@@ -8,7 +8,7 @@ import { NewsSection } from '@/components/NewsSection';
 import { GovernmentSchemes } from '@/components/GovernmentSchemes';
 import { PestDiseaseSection } from '@/components/PestDiseaseSection';
 import { ChatSection } from '@/components/ChatSection';
-import { MobileAppSection } from '@/components/MobileAppSection';
+
 
 const Index = () => {
   const [language, setLanguage] = useState('hi');
@@ -24,15 +24,15 @@ const Index = () => {
       <GovernmentSchemes language={language} />
       <PestDiseaseSection language={language} />
       <ChatSection language={language} />
-      <MobileAppSection language={language} />
+      
       
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-2">
             {language === 'hi' 
-              ? '© 2024 हरित सहायक पोर्टल - सभी अधिकार सुरक्षित'
-              : '© 2024 Harit Sahayak Portal - All Rights Reserved'
+              ? '© 2024 स्मार्ट कृषि - सभी अधिकार सुरक्षित'
+              : '© 2024 Smart Krishi - All Rights Reserved'
             }
           </p>
           <p className="text-sm text-primary-foreground/80">
